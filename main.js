@@ -4,12 +4,13 @@ let count = 0;
 let tm = 0;
 let tmn = 0;
 let lock = 0;
+let n = 3;
 function buttonClick(){
     if(lock === 0){
 
         const interval=setInterval(function(){
             lock = 1;
-            console.log("10進法:%d 3進法:%d", time, timen);
+            console.log("10進法:%d %d進法:%d", time, n, timen);
             if (time < 10){
                 tm = "00"+time;
             } else if (time < 100){
@@ -27,7 +28,7 @@ function buttonClick(){
             document.getElementById('a').textContent = tm;
             document.getElementById('b').textContent = tmn; 
             time++;
-            timen = ((time-time%(3**3))/(3**3))*1000 + (((time%(3**3))-(time%(3**3))%(3**2))/(3**2))*100 + (((time%(3**3))%(3**2)-((time%(3**3))%(3**2))%3)/3)*10 + ((time%(3**3))%(3**2))%3;
+            timen = ((time-time%(n**3))/(n**3))*1000 + (((time%(n**3))-(time%(n**3))%(n**2))/(n**2))*100 + (((time%(n**3))%(n**2)-((time%(n**3))%(n**2))%n)/n)*10 + ((time%(n**3))%(n**2))%n;
             count++;
             time = time%1000;
             timen = timen%1000;

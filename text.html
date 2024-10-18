@@ -2,12 +2,20 @@
 <html>
     <body>
         <h1>N進法タイマー</h1>
-        <label>n=<input type="number" id="num1" value="3"></label>
         <button type="button" id="strt">start</button>
-        <p>10進法</p>
-        <p id="a"></p>
-        <p id="nshinhou"></p>
-        <p id="b"></p>
+        <div>
+            <p>10進法</p>
+            <p id="a"></p>
+        </div>
+        <div id="timer1">
+            <form id="numberform1">
+                <label>n=<input type="number" id="num1" value="3"></label>
+                <p id="nshinhou1">3進法</p>
+            </form>    
+            <p id="b"></p>
+        </div>
+        
+        
         <script src="main.js"></script>
     </body>
 </html>

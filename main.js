@@ -4,16 +4,17 @@ let count = 0;
 let tm = "000";
 let tmn = "000";
 let lock = 0;
-let n = document.getElementById("num1");
-n = n.value;
+const ary = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
 document.getElementById('a').textContent = tm;
 document.getElementById('b').textContent = tmn;
-document.getElementById('nshinhou').textContent = n + "進法";
+const numberValue1 = document.forms.numberform1.num1;
 
-n-shinhou.addEventListener('input', function(){
-    n = document.getElementById("num1").value;
-    document.getElementById('nshinhou').textContent = n + "進法";
+numberValue1.addEventListener("input", ()=>{
+    let inputValueBox = document.getElementById('nshinhou1');
+    inputValueBox.textContent = numberValue1.value + "進法";
 })
+
 
 function buttonClick(){
     let n = document.getElementById("num1");

@@ -46,6 +46,23 @@ function stop(){
     interval = null;
     lock = 0;
 }
+function reset(){
+    console.log("resetボタンが押されました");
+    time = 0;
+    timen = 0;
+    timem = 0;
+    timel = 0;
+    timeary = [timen, timem, timel];
+    count = 0;
+    tm = "000";
+    tmn = "000";
+    tmm = "000";
+    tml = "000";
+    tmary = [tmn, tmm, tml];
+    for(i=0; i<3; i++){
+        document.getElementById(displayarry[i]).textContent = tmary[i]; 
+    }
+}
 
 function calcNtime(x, y){
     return ((x-x%(y**3))/(y**3))*1000 + (((x%(y**3))-(x%(y**3))%(y**2))/(y**2))*100 + (((x%(y**3))%(y**2)-((x%(y**3))%(y**2))%y)/y)*10 + ((x%(y**3))%(y**2))%y;
@@ -105,3 +122,5 @@ let startButton = document.getElementById('strt');
 startButton.addEventListener('click', start);
 let stopButton = document.getElementById('stp');
 stopButton.addEventListener('click', stop);
+let resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', reset);

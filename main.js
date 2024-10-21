@@ -13,7 +13,7 @@ const numberValue1 = document.forms.numberform1.num1;
 numberValue1.addEventListener("input", ()=>{
     let inputValueBox = document.getElementById('nshinhou1');
     inputValueBox.textContent = numberValue1.value + "進法";
-})
+});
 
 
 function buttonClick(){
@@ -25,8 +25,10 @@ function buttonClick(){
         const interval=setInterval(function(){
             lock = 1;
             time++;
+            //n進法に変換
             timen = ((time-time%(n**3))/(n**3))*1000 + (((time%(n**3))-(time%(n**3))%(n**2))/(n**2))*100 + (((time%(n**3))%(n**2)-((time%(n**3))%(n**2))%n)/n)*10 + ((time%(n**3))%(n**2))%n;
             count++;
+            //三桁にする
             time = time%1000;
             timen = timen%1000;
             console.log("10進法:%d %d進法:%d", time, n, timen);
@@ -50,10 +52,21 @@ function buttonClick(){
             if (count === 10000) {
                 clearInterval(interval);
             }
-        
+            
+            
         }, 1000);
     }
-}
+};
 
-let button = document.getElementById('strt');
-button.addEventListener('click', buttonClick);
+
+
+let strtButton = document.getElementById('strt');
+strtButton.addEventListener('click', buttonClick);
+let stopButton = document.getElementById('stop');
+stopButton = addEventListener('click', ()=>{
+    
+});
+let resetButton = document.getElementById('reset');
+resetButton = addEventListener('click', ()=>{
+    clearInterval(interval);
+});

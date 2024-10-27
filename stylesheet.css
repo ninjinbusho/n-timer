@@ -1,3 +1,22 @@
-.timer {
+.timerdiv {
     float: left;
+}
+
+.timer {
+    font-size: 100px;
+    text-align: center;
+    
+}
+
+p {
+    font-size: 30px;
+}
+
+form {
+    font-size: 30px;
+}
+
+input {
+    font-size: 30px;
+    width: 50px;
 }

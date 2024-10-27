@@ -59,6 +59,7 @@ function reset(){
     tmm = "000";
     tml = "000";
     tmary = [tmn, tmm, tml];
+    document.getElementById('a').textContent = tm;
     for(i=0; i<3; i++){
         document.getElementById(displayarry[i]).textContent = tmary[i]; 
     }

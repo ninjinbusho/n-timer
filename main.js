@@ -66,7 +66,7 @@ function reset(){
 }
 
 function calcNtime(x, y){
-    return ((x-x%(y**3))/(y**3))*1000 + (((x%(y**3))-(x%(y**3))%(y**2))/(y**2))*100 + (((x%(y**3))%(y**2)-((x%(y**3))%(y**2))%y)/y)*10 + ((x%(y**3))%(y**2))%y;
+    return ary[(((x%(y**3))-(x%(y**3))%(y**2))/(y**2))] + ary[(((x%(y**3))%(y**2)-((x%(y**3))%(y**2))%y)/y)] + ary[((x%(y**3))%(y**2))%y];
 }
 
 function start(){
@@ -85,15 +85,7 @@ function start(){
             time++;
             for(i=0; i<3; i++){
                 timeary[i] = calcNtime(time, numary[i]);
-                timeary[i] = timeary[i]%1000;
-                if (timeary[i] < 10){
-                    tmary[i] = "00"+timeary[i];
-                } else if (timeary[i] < 100){
-                    tmary[i] = "0"+timeary[i];
-                } else {
-                    tmary[i] = timeary[i];
-                }
-                document.getElementById(displayarry[i]).textContent = tmary[i]; 
+                document.getElementById(displayarry[i]).textContent = timeary[i]; 
             }
             count++;
             //三桁にする
@@ -106,7 +98,7 @@ function start(){
                 tm = time;
             } 
             document.getElementById('a').textContent = tm;
-            console.log("10進法:%d %d進法:%d %d進法:%d %d進法:%d", time, n, timeary[0], m, timeary[1], l, timeary[2]);
+            console.log("10進法:%d %d進法:%s %d進法:%s %d進法:%s", time, n, timeary[0], m, timeary[1], l, timeary[2]);
 
             if (count === 10000) {
                 clearInterval(interval);

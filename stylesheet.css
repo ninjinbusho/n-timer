@@ -1,25 +1,27 @@
 .timerdiv {
+    position: relative;
     float: left;
     margin: 10px;
-    height: 70px;
+    height:300px;
+    width: 250px;
+    display: inline-block;
 }
 
 .timer {
-    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 10px;
     font-size: 100px;
     text-align: center;
-    border: solid 3px #000000;
-    border-radius: 10px;
-    display:flex;
-    align-items:flex-end;
+    border: double 8px #000000;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 10px;
 }
 
-p {
+.shinhou {
     font-size: 30px;
-}
-
-form {
-    font-size: 30px;
+    margin: 10px;
 }
 
 input {

@@ -1,5 +1,4 @@
 .timerdiv {
-    position: relative;
     margin: 10px;
     height:400px;
     width: 300px;
@@ -32,41 +31,6 @@ input {
 #sankou {
     font-size: 20px;
     margin:10px;
-}
-
-.parallelogram1{
-    width: 250px;
-    height: 50px;
-    background: #ffffff;
-    transform:skewX(-60deg);
-    border-right: solid 3px #000000;
-    border-left: solid 3px #000000;
-    position: absolute;
-    bottom: 168px;
-    left: 56px;
-}
-
-.parallelogram2{
-    width: 85px;
-    height: 155px;
-    background: #ffffff;
-    border-bottom: solid 3px #000000;
-    border-top: solid 3px #000000;
-    border-radius: 10px;
-    transform: skewY(-30deg);
-    position: absolute;
-    bottom: 38px;
-    left: 268px;
-}
-
-.rectangle1 {
-    width: 250px;
-    height: 150px;
-    border: solid 3px #000000;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 71px;
-    left: 100px;
 }
 
 .timer::before {
@@ -110,16 +74,36 @@ input {
     transform: skewX(-60deg);
     border: solid 3px #000000;
     border-radius: 5px;
-    bottom: 190px;
+    top: 0px;
     left: 133px;
 }
 
 .parallelogram::before {
     position: absolute;
-    width: 120%;
-    height: 40px;
+    width: 100%;
+    height: 10px;
     background: green;
     border: solid 2px #000000;
     content:'';
-    clip-path: polygon(0 100%, 0 80%, 80% 80%, 100% 100%, 100% 0, 80% 0, 80% 80%, 100% 100%);
+    bottom: -14px;
+    left: 7%;
+    transform: skewX(60deg);
+}
+.parallelogram::after {
+    position: absolute;
+    width: 25px;
+    height: 110%;
+    content: '';
+    right: -30px;
+    bottom: px;
+    transform: skew(0);
+    transform: skewY(30deg);
+
+    background: blue;
+}
+
+.timer-design {
+    width: 370px;
+    height: 226px;
+    position: relative;
 }

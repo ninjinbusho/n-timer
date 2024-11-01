@@ -35,11 +35,6 @@ numberValue3.addEventListener("input", ()=>{
     inputValueBox3.textContent = numberValue3.value + "進法";
 })
 
-
-
-
-
-
 function stop(){
     console.log("stopボタンが押されました");
     clearInterval(interval);
@@ -117,3 +112,12 @@ let stopButton = document.getElementById('stp');
 stopButton.addEventListener('click', stop);
 let resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', reset);
+let display10shinhou = document.getElementById('checkbox');
+display10shinhou.addEventListener('change', function(){
+    var ele = document.getElementById('shinhou10');
+    if(document.getElementById('checkbox').checked) {
+        ele.style.display = 'inline-block';
+    }else {
+        ele.style.display = 'none';
+    }
+});

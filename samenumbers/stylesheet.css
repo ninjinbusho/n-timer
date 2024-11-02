@@ -1,0 +1,125 @@
+.timerdiv {
+    margin: 10px;
+    height:400px;
+    width: 300px;
+    display: inline-block;
+}
+
+.timer {
+    position: absolute;
+    bottom: 0;
+    width: 250px;
+    font-size: 100px;
+    text-align: center;
+    border: double 8px #000000;
+    border-radius: 20px;
+    background-color:rgb(212, 212, 212);
+    display: inline-block;
+    margin: 10px;
+}
+
+.shinhou {
+    font-size: 30px;
+    margin: 10px;
+}
+
+input {
+    font-size: 30px;
+    width: 50px;
+}
+
+#sankou {
+    font-size: 20px;
+    margin:10px;
+}
+
+.timer::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 50px;
+    top: -56px;
+    left: 45px;
+    transform: skewX(-60deg);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 20px;
+    border-left: solid 5px #000000;
+    border-top: solid 2px #000000;
+    background-color: #ffffff;
+    z-index: -2;
+}
+
+.timer::after {
+    position: absolute;
+    content: '';
+    width: 87px;
+    height: 103%;
+    bottom: 25px;
+    right: -90px;
+    transform: skewY(-30deg);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 15px;
+    border-top: solid 3px #000000;
+    border-bottom: solid 3px #000000;
+    border-right: solid 3px #000000;
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.parallelogram{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    transform: skewX(-60deg);
+    border: solid 3px #000000;
+    border-radius: 5px;
+    top: 0px;
+    left: 133px;
+}
+
+.parallelogram::before {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    border: solid 2px #000000;
+    content:'';
+    bottom: -14px;
+    left: 9%;
+    border-radius: 3px;
+    transform: skewX(60deg);
+    background-color: #ffffff;
+}
+.parallelogram::after {
+    position: absolute;
+    width: 22px;
+    height: 104%;
+    content: '';
+    right: -25px;
+    bottom: -8px;
+    transform: skew(0);
+    transform: skewY(30deg);
+    border: solid 2px #000000;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+
+.timer-design {
+    width: 370px;
+    height: 226px;
+    position: relative;
+}
+
+button {
+    font-size: 30px;
+    width: 130px;
+    height: 40px;
+}
+
+#shinhou10 {
+    display: none;
+}
+
+#checkboxid {
+    font-size: 30px;
+}

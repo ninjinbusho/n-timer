@@ -80,12 +80,6 @@ function start(){
     inputn = document.getElementById("num1");
     inputm = document.getElementById("num2");
     inputl = document.getElementById("num3");
-    if(lock == 0){
-        inputn.disabled = true;
-        inputm.disabled = true;
-        inputl.disabled = true;
-        console.log("disabled");
-    }
     if(lock != 1){
         lock = 1;
         let n = inputn.value;
@@ -93,6 +87,9 @@ function start(){
         let l = inputl.value;
         let numary = [n, m, l];
         console.log(n, m, l);
+        inputn.disabled = true;
+        inputm.disabled = true;
+        inputl.disabled = true;
         interval=setInterval(function(){
             
             time++;

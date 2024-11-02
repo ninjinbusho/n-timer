@@ -47,25 +47,29 @@ function stop(){
 
 function reset(){
     console.log("resetボタンが押されました");
-    inputn.disabled = false;
-    inputm.disabled = false;
-    inputl.disabled = false;
-    lock = 0;
-    time = 0;
-    timen = 0;
-    timem = 0;
-    timel = 0;
-    timeary = [timen, timem, timel];
-    count = 0;
-    tm = "000";
-    tmn = "000";
-    tmm = "000";
-    tml = "000";
-    tmary = [tmn, tmm, tml];
-    document.getElementById('a').textContent = tm;
-    for(i=0; i<3; i++){
-        document.getElementById(displayarry[i]).textContent = tmary[i]; 
+    if(lock === 2){
+        inputn.disabled = false;
+        inputm.disabled = false;
+        inputl.disabled = false;
+        lock = 0;
+        time = 0;
+        timen = 0;
+        timem = 0;
+        timel = 0;
+        timeary = [timen, timem, timel];
+        count = 0;
+        tm = "000";
+        tmn = "000";
+        tmm = "000";
+        tml = "000";
+        tmary = [tmn, tmm, tml];
+        document.getElementById('a').textContent = tm;
+        for(i=0; i<3; i++){
+            document.getElementById(displayarry[i]).textContent = tmary[i]; 
+        }
     }
+    
+    
 }
 
 function calcNtime(x, y){

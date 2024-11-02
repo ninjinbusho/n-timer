@@ -16,6 +16,12 @@ let interval = null;
 let inputn = document.getElementById("num1");
 let inputm = document.getElementById("num2");
 let inputl = document.getElementById("num3");
+let now = new Date();
+let startDate = new Date('2024-11-02 10:30');
+
+console.log(now);
+console.log(startDate);
+console.log(now - startDate);
 
 document.getElementById('a').textContent = tm;
 for(i=0; i<3; i++){
@@ -80,9 +86,8 @@ function start(){
     inputn = document.getElementById("num1");
     inputm = document.getElementById("num2");
     inputl = document.getElementById("num3");
-    if(lock == 0){
-        
-    }
+    
+    
     if(lock != 1){
         lock = 1;
         let n = inputn.value;
@@ -94,8 +99,9 @@ function start(){
         inputm.disabled = true;
         inputl.disabled = true;
         interval=setInterval(function(){
+            now = new Date();
+            time = ((now - startDate)/1000)-((now - startDate)/1000)%1;
             
-            time++;
             for(i=0; i<3; i++){
                 timeary[i] = calcNtime(time, numary[i]);
                 document.getElementById(displayarry[i]).textContent = timeary[i]; 
@@ -111,25 +117,18 @@ function start(){
                 tm = time;
             } 
             document.getElementById('a').textContent = tm;
+            console.log(now);
+            console.log(time);
             console.log("10進法:%d %d進法:%s %d進法:%s %d進法:%s", time, n, timeary[0], m, timeary[1], l, timeary[2]);
 
-            if (count === 10000) {
-                clearInterval(interval);
-                interval = null;
-                lock = 0;
-            }
+            
         }, 1000);
     }
 };
 
+start();
 
 
-let startButton = document.getElementById('strt');
-startButton.addEventListener('click', start);
-let stopButton = document.getElementById('stp');
-stopButton.addEventListener('click', stop);
-let resetButton = document.getElementById('reset');
-resetButton.addEventListener('click', reset);
 let display10shinhou = document.getElementById('checkbox');
 display10shinhou.addEventListener('change', function(){
     var ele = document.getElementById('shinhou10');

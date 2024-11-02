@@ -17,7 +17,7 @@ let inputn = document.getElementById("num1");
 let inputm = document.getElementById("num2");
 let inputl = document.getElementById("num3");
 let now = new Date();
-let startDate = new Date('2024-11-02 10:30');
+let startDate = new Date('2024-11-03 10:50');
 
 console.log(now);
 console.log(startDate);

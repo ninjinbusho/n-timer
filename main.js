@@ -110,11 +110,7 @@ function start(){
             document.getElementById('a').textContent = tm;
             console.log("10進法:%d %d進法:%s %d進法:%s %d進法:%s", time, n, timeary[0], m, timeary[1], l, timeary[2]);
 
-            if (count === 10000) {
-                clearInterval(interval);
-                interval = null;
-                lock = 0;
-            }
+            
         }, 1000);
     }
 };

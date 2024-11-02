@@ -13,6 +13,9 @@ let displayarry = ['b', 'c', 'd'];
 let lock = 0;
 const ary = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let interval = null;
+let inputn = document.getElementById("num1");
+let inputm = document.getElementById("num2");
+let inputl = document.getElementById("num3");
 
 document.getElementById('a').textContent = tm;
 for(i=0; i<3; i++){
@@ -39,10 +42,15 @@ function stop(){
     console.log("stopボタンが押されました");
     clearInterval(interval);
     interval = null;
-    lock = 0;
+    lock = 2;
 }
+
 function reset(){
     console.log("resetボタンが押されました");
+    inputn.disabled = false;
+    inputm.disabled = false;
+    inputl.disabled = false;
+    lock = 0;
     time = 0;
     timen = 0;
     timem = 0;
@@ -65,18 +73,24 @@ function calcNtime(x, y){
 }
 
 function start(){
-    let n = document.getElementById("num1");
-    n = n.value;
-    let m = document.getElementById("num2");
-    m = m.value;
-    let l = document.getElementById("num3");
-    l = l.value;
-    let numary = [n, m, l];
-    console.log(n, m, l);
-    if(lock === 0){
-        
+    inputn = document.getElementById("num1");
+    inputm = document.getElementById("num2");
+    inputl = document.getElementById("num3");
+    if(lock == 0){
+        inputn.disabled = true;
+        inputm.disabled = true;
+        inputl.disabled = true;
+        console.log("disabled");
+    }
+    if(lock != 1){
+        lock = 1;
+        let n = inputn.value;
+        let m = inputm.value;
+        let l = inputl.value;
+        let numary = [n, m, l];
+        console.log(n, m, l);
         interval=setInterval(function(){
-            lock = 1;
+            
             time++;
             for(i=0; i<3; i++){
                 timeary[i] = calcNtime(time, numary[i]);
